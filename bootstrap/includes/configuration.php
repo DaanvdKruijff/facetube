@@ -4,7 +4,7 @@
 $env = parse_ini_file('../.env');
 
 // Declare configuration
-$app->set('name', 'MVC Application');
+$app->set('name', 'Facetube');
 $app->set('env', $env);
 
 // Declare framework configuration
