@@ -1,7 +1,7 @@
 <?php
 
 // Initialize application
-$app = new Flight\Engine;
+$app = new flight\Engine;
 
 // Declare configuration, database and routes
 require_once __DIR__ . '/../bootstrap/includes/configuration.php';
