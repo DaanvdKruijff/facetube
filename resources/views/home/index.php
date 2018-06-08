@@ -1,7 +1,7 @@
 <?php $app->render('shared/header'); ?>
 
 <div class="container">
-    Hello World! TEST
+    Hello World! Hello Daan!
 </div>
 
 <?php $app->render('shared/footer'); ?>
