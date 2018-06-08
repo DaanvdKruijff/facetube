@@ -2,8 +2,7 @@
 
 <div class="container">
     Hello World! Hello Daan!
-    <p>Hoi</p>
+    <p>Hoi theo</p>
 </div>
-
 
 <?php $app->render('shared/footer'); ?>
