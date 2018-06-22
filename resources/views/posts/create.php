@@ -15,12 +15,4 @@
 	</form>
 </div>
 
-<?php
-
-if (isset($_POST["titel"], $_POST["inhoud"], )) {
- 	# code...
- } 
-
-?>
-
 <?php $app->render('shared/footer'); ?>
