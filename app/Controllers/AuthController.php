@@ -25,7 +25,7 @@ class AuthController extends Controller
         $db = $this->app->get('db');
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $query = ($dbh->prepare('DELETE FROM fruit')>->execute();
+            $query = ($dbh->prepare('DELETE FROM fruit')->execute();
             $found = $query->rowCount();
 
             var_dump($found);
