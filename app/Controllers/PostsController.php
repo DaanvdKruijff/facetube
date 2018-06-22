@@ -12,13 +12,9 @@ class PostsController extends Controller
 
 
         	if (isset($_POST["titel"], $_POST["inhoud"], $_POST["submit"])) {
- 				$titel = $_POST['titel'];
- 				$inhoud = $_POST['inhoud'];
 
- 				$sql = "INSERT INTO Posts VALUES($titel, $inhoud)";
-
-
- 				$sql1 = "INSERT INTO Videos VALUES($titel)";
+        		
+        		
 			} 
 
 
