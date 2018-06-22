@@ -14,4 +14,5 @@ $app->set('flight.views.path', '../resources/views');
 // Declare controllers
 $controllers = [
     'HomeController' => new App\Controllers\HomeController($app),
+    'AuthController' => new App\Controllers\AuthController($app),
 ];
