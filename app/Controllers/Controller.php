@@ -19,4 +19,26 @@ class Controller
 
         return $this->app->get($key);
     }
+
+    protected function redirectIfAuthenticated()
+    {
+        if (isset($_SESSION['user'])) {
+            $this->app->redirect('/dashboard');
+
+            return true;
+        }
+
+        return false;
+    }
+
+    protected function redirectIfNotAuthenticated()
+    {
+        if (!isset($_SESSION['user'])) {
+            $this->app->redirect('/auth/signin');
+
+            return true;
+        }
+
+        return false;
+    }
 }

@@ -10,6 +10,9 @@ class AuthController extends Controller
     {
         $db = $this->app->get('db');
 
+        // Redirect if authenticated
+        $this->redirectIfAuthenticated();
+
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $query = $db->prepare('INSERT INTO Gebruikers (GebruikerID, Gebruikersnaam, Voornaam, Achternaam, Email, Wachtwoord) VALUES (NULL, ?, ?, ?, ?, ?)');
             $query->execute([$_POST['username'], $_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['password']]);
@@ -28,6 +31,9 @@ class AuthController extends Controller
     public function signin()
     {
         $db = $this->app->get('db');
+
+        // Redirect if authenticated
+        $this->redirectIfAuthenticated();
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $query = $db->prepare('SELECT GebruikerID FROM Gebruikers WHERE Email = ? AND Wachtwoord = ?');
