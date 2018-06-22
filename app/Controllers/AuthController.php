@@ -9,9 +9,11 @@ class AuthController extends Controller
         $db = $this->app->get('db');
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $this->app->redirect('/sa');
-            // $query = $db->prepare('INSERT INTO (GebruikerID, Gebruikersnaam, Voornaam, Achternaam, Email, Wachtwoord) VALUES (NULL, ?, ?, ?, ?, ?)');
-            // $query->execute([$_POST['username'], $_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['password']]);
+            $query = $db->prepare('INSERT INTO Gebruikers (GebruikerID, Gebruikersnaam, Voornaam, Achternaam, Email, Wachtwoord) VALUES (NULL, ?, ?, ?, ?, ?)');
+            $query->execute([$_POST['username'], $_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['password']]);
+
+            // Redirect
+            $this->app->redirect('/auth/signin');
         }
 
         $this->app->view()->set('title', 'Sign up');
@@ -23,7 +25,13 @@ class AuthController extends Controller
         $db = $this->app->get('db');
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            //
+            $query = $db->prepare('SELECT GebruikerID FROM Gebruikers WHERE Email = ? AND Wachtwoord = ?');
+            $query->execute([$_POST['email'], $_POST['password']]);
+
+            // Check if user is found
+            $found = $query->rowCount();
+
+            var_dump($found);
         }
 
         $this->app->view()->set('title', 'Sign in');

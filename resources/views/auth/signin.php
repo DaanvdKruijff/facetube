@@ -3,7 +3,7 @@
 <div class="container">
     <h1>Sign in</h1>
 
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+    <form action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="post">
         <div class="form-group">
             <label>E-mailadres</label>
             <input type="email" name="email" class="form-control" required="required">
