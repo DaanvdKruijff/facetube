@@ -26,6 +26,12 @@ class PostsController extends Controller
     }
     public function view()
     {
-        
+       $db = $this->app->get('db');
+
+        if($_SERVER['REQUEST_METHOD'] == "POST") 
+        {
+            
+        }
+
     }
 }
