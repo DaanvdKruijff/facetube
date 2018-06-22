@@ -6,22 +6,27 @@
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
         <div class="form-group">
             <label>Voornaam</label>
-            <input type="text" name="firstname" class="form-control">
+            <input type="text" name="firstname" class="form-control" required="required">
         </div>
 
         <div class="form-group">
             <label>Achternaam</label>
-            <input type="text" name="lastname" class="form-control">
+            <input type="text" name="lastname" class="form-control" required="required">
         </div>
 
         <div class="form-group">
             <label>E-mailadres</label>
-            <input type="email" name="email" class="form-control">
+            <input type="email" name="email" class="form-control" required="required">
+        </div>
+
+        <div class="form-group">
+            <label>Gebruikersnaam</label>
+            <input type="text" name="username" class="form-control" required="required">
         </div>
 
         <div class="form-group">
             <label>Wachtwoord</label>
-            <input type="password" name="password" class="form-control">
+            <input type="password" name="password" class="form-control" required="required">
         </div>
 
         <button type="submit" class="btn btn-primary">Sign up</button>
