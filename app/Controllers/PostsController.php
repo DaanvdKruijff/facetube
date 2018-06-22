@@ -24,4 +24,8 @@ class PostsController extends Controller
         $this->app->view()->set('title', 'Post aanmaken');
         $this->app->render('posts/create.php');
     }
+    public function view()
+    {
+        
+    }
 }
