@@ -3,6 +3,10 @@
 <div class="container">
     <h1>Sign in</h1>
 
+    <?php if (isset($error)): ?>
+        <p><?php echo htmlspecialchars($error); ?></p>
+    <?php endif; ?>
+
     <form action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="post">
         <div class="form-group">
             <label>E-mailadres</label>
