@@ -1,5 +1,8 @@
 <?php
 
+// Start session
+session_start();
+
 // Declare environment variables
 $env = parse_ini_file('../.env');
 
@@ -15,4 +18,5 @@ $app->set('flight.views.path', '../resources/views');
 $controllers = [
     'HomeController' => new App\Controllers\HomeController($app),
     'AuthController' => new App\Controllers\AuthController($app),
+    'PostsController' => new App\Controllers\PostsController($app),
 ];
