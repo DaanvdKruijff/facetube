@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use PDO;
+
 class AuthController extends Controller
 {
     public function signup()
