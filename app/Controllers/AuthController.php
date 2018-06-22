@@ -31,7 +31,15 @@ class AuthController extends Controller
             // Check if user is found
             $found = $query->rowCount();
 
-            var_dump($found);
+            if ($found) {
+                $user = $query->fetch(PDO::FETCH_ASSOC);
+
+                // Set User ID in Session
+                $_SESSION['user'] = $user['GebruikerID'];
+
+                // Redirect
+                $this->app->redirect('/dashboard');
+            }
         }
 
         $this->app->view()->set('title', 'Sign in');

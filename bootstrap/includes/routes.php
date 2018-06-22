@@ -6,7 +6,9 @@ $app->route('/', [$controllers['HomeController'], 'index']);
 $app->route('/auth/signup', [$controllers['AuthController'], 'signup']);
 $app->route('/auth/signin', [$controllers['AuthController'], 'signin']);
 
+// Dashboard
+$app->route('/dashboard', [$controllers['DashboardController'], 'index']);
 
-// Post
-$app->route('/post/create', [$controllers['PostsController'], 'create']);
-$app->route('/post/view', [$controllers['PostsController'], 'view']);
+// Posts
+$app->route('/posts/create', [$controllers['PostsController'], 'create']);
+$app->route('/posts/view', [$controllers['PostsController'], 'view']);

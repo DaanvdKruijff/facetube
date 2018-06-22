@@ -24,4 +24,14 @@ class PostsController extends Controller
         $this->app->view()->set('title', 'Post aanmaken');
         $this->app->render('posts/create.php');
     }
+    public function view()
+    {
+       $db = $this->app->get('db');
+
+        if($_SERVER['REQUEST_METHOD'] == "POST") 
+        {
+            
+        }
+
+    }
 }
