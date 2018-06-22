@@ -6,7 +6,9 @@ class AuthController extends Controller
 {
     public function signup()
     {
-        //
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //
+        }
 
         $this->app->view()->set('title', 'Sign up');
         $this->app->render('auth/signup');
@@ -14,7 +16,9 @@ class AuthController extends Controller
 
     public function signin()
     {
-        //
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //
+        }
 
         $this->app->view()->set('title', 'Sign in');
         $this->app->render('auth/signin');
