@@ -22,11 +22,15 @@
         <div class="container">
             <u>
                 <li>
-                    <a href="/auth/signup">Registreren</a>
+                    <a href="/">Home</a>
                 </li>
 
                 <li>
                     <a href="/auth/signin">Inloggen</a>
+                </li>
+
+                <li>
+                    <a href="/auth/signup">Registreren</a>
                 </li>
             </u>
         </div>
