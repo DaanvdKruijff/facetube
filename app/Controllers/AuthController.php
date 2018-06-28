@@ -24,7 +24,7 @@ class AuthController extends Controller
             $this->app->redirect('/auth/signin');
         }
 
-        $this->app->view()->set('title', 'Sign up');
+        $this->app->view()->set('title', 'Registreren');
         $this->app->render('auth/signup');
     }
 
@@ -55,7 +55,7 @@ class AuthController extends Controller
             }
         }
 
-        $this->app->view()->set('title', 'Sign in');
+        $this->app->view()->set('title', 'Inloggen');
         $this->app->render('auth/signin');
     }
 }
