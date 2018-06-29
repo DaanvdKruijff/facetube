@@ -12,7 +12,10 @@ class PostsController extends Controller
         $this->redirectIfNotAuthenticated();
 
         if($_SERVER['REQUEST_METHOD'] == "POST") {
+
+
         	if (isset($_POST["titel"], $_POST["inhoud"], $_POST["submit"])) {
+
         		$query = $db->prepare('INSERT INTO Posts (GebruikersID, Titel, Inhoud) VALUES (?, ?, ?)');
                 $query->execute([SESSION['user']], [$_POST['titel'], [$_POST['inhoud']]);
 
@@ -22,30 +25,27 @@ class PostsController extends Controller
                     $query = $db->prepare('INSERT INTO Videos (PostID, Titel) VALUES (?, ?)');
                     $query->execute([$lastID], [$_POST['titel']]);
                 }
+
 			}
         }
+
 
         $this->app->view()->set('title', 'Post aanmaken');
         $this->app->render('posts/create.php');
     }
 
-    public function CreateComments()
+    public function view()
     {
         $db = $this->app->get('db');
 
         // Redirect if not authenticated
         $this->redirectIfNotAuthenticated();
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') 
-        {
-            if (isset($_POST['inhoud'])) {
-                $query = $db->prepare('INSERT INTO Comments (GebruikerID, PostID, Inhoud)');
-                 
-            }
-            
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //
         }
 
-         $this->app->view()->set('titel', 'Post bekijken');
-         $this->app->render('posts/view.php');
+        // $this->app->view()->set('title', 'Post bekijken');
+        // $this->app->render('posts/view.php');
     }
 }
