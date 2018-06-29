@@ -17,6 +17,7 @@ class HomeController extends Controller
         $posts = $postsQuery->fetch(\PDO::FETCH_ASSOC);
 
         var_dump($posts);
+        echo $db->error;
 
         // Get videos
         $videosQuery = $db->prepare('SELECT * FROM Videos');
@@ -24,11 +25,15 @@ class HomeController extends Controller
         $videos = $videosQuery->fetch(\PDO::FETCH_ASSOC);
 
         var_dump($videos);
+        echo $db->error;
 
         // Get comments
         $commentsQuery = $db->prepare('SELECT * FROM Comments');
         $commentsQuery->execute();
         $comments = $commentsQuery->fetch(\PDO::FETCH_ASSOC);
+
+        var_dump($comments);
+        echo $db->error;
 
         $this->app->view()->set('title', 'Home');
         $this->app->view()->set('posts', $posts);
