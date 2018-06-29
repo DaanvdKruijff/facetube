@@ -23,12 +23,15 @@ class AuthController extends Controller
             if (!$found) {
                 $query = $db->prepare('INSERT INTO Gebruikers (GebruikerID, Gebruikersnaam, Voornaam, Achternaam, Email, Wachtwoord) VALUES (NULL, ?, ?, ?, ?, ?)');
                 $query->execute([$_POST['username'], $_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['password']]);
+
+                // Redirect
+                $this->app->redirect('/auth/signin');
             } else {
                 $this->app->view()->set('error', 'Deze gebruiker bestaat al.');
-            }
 
-            // Redirect
-            $this->app->redirect('/auth/signin');
+                // Redirect
+                $this->app->redirect('/auth/signup');
+            }
         }
 
         $this->app->view()->set('title', 'Registreren');
