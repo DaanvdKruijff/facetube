@@ -6,6 +6,8 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $db = $this->app->get('db');
+
         // Redirect if authenticated
         $this->redirectIfAuthenticated();
 

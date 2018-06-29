@@ -6,6 +6,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        $db = $this->app->get('db');
+
         // Redirect if not authenticated
         $this->redirectIfNotAuthenticated();
 
