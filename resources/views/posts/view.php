@@ -2,9 +2,6 @@
 
 <div class="container">
 	<form name="CommentMaken" method="post" target="">
-		<label>Titel</label>
-			<input type="text" name="titel">
-		
 		<label>Inhoud</label>
 			<textarea name="inhoud"></textarea>	
 		<input type="submit" value="Plaatsen" name="submit">
