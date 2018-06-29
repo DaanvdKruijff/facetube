@@ -3,15 +3,15 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-            <?php echo print_r($posts, true); ?>
+            <?php var_dump($posts); ?>
         </div>
 
         <div class="col-sm-4">
-            <?php echo print_r($videos, true); ?>
+            <?php var_dump($videos); ?>
         </div>
 
         <div class="col-sm-4">
-            <?php echo print_r($comments, true); ?>
+            <?php var_dump($comments); ?>
         </div>
     </div>
 </div>
