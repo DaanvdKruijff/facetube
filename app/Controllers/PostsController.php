@@ -44,7 +44,8 @@ class PostsController extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             if (isset($_POST['inhoud'])) {
-                $query = $db->prepare('INSERT INTO Comments (GebruikerID, PostID, Inhoud) VALUES ();
+                $query = $db->prepare('INSERT INTO Comments (GebruikerID, PostID, Inhoud) VALUES (?, ?, ?)');
+                $query->execute([$_SESSION['user'], $_GET[$PostID], $_POST['inhoud']]);
                  
             }
             
