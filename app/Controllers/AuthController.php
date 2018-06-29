@@ -14,8 +14,8 @@ class AuthController extends Controller
         $this->redirectIfAuthenticated();
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $query = $db->prepare('SELECT GebruikerID FROM Gebruikers WHERE Email = ? AND Wachtwoord = ?');
-            $query->execute([$_POST['email'], $_POST['password']]);
+            $query = $db->prepare('SELECT GebruikerID FROM Gebruikers WHERE Email = ? AND Gebruikersnaam = ? AND Wachtwoord = ?');
+            $query->execute([$_POST['email'], $_POST['username'], $_POST['password']]);
 
             // Check if user is found
             $found = $query->rowCount();
