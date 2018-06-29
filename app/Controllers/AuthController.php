@@ -28,9 +28,6 @@ class AuthController extends Controller
                 $this->app->redirect('/auth/signin');
             } else {
                 $this->app->view()->set('error', 'Deze gebruiker bestaat al.');
-
-                // Redirect
-                $this->app->redirect('/auth/signup');
             }
         }
 
