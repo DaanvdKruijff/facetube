@@ -34,7 +34,7 @@ class PostsController extends Controller
         $this->app->render('posts/create.php');
     }
 
-    public function view()
+    public function createcomment()
     {
         $db = $this->app->get('db');
 
