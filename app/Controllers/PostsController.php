@@ -44,13 +44,13 @@ class PostsController extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             if (isset($_POST['inhoud'])) {
-                $query = $db->prepare('INSERT INTO Comments (GebruikerID, PostID, Inhoud) VALUES (');
+                $query = $db->prepare('INSERT INTO Comments (GebruikerID, PostID, Inhoud) VALUES ();
                  
             }
             
         }
 
-        // $this->app->view()->set('title', 'Post bekijken');
-        // $this->app->render('posts/view.php');
+         $this->app->view()->set('title', 'Post bekijken');
+         $this->app->render('posts/view.php');
     }
 }
