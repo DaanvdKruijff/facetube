@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use PDO;
 
+
 class HomeController extends Controller
 {
     public function index()
@@ -24,6 +25,8 @@ class HomeController extends Controller
         $videosQuery = $db->prepare('SELECT * FROM Videos');
         $videosQuery->execute();
         $videos = $videosQuery->fetch(PDO::FETCH_ASSOC);
+
+        var_dump($videos);
 
         // Get comments
         $commentsQuery = $db->prepare('SELECT * FROM Comments');
