@@ -23,7 +23,7 @@ class PostsController extends Controller
                 {
                     $lastID = $db->insert_id;
                     $query = $db->prepare('INSERT INTO Videos (PostID, Titel) VALUES (?, ?)');
-                    $query->execute([$lastID], [$_POST['titel']]);
+                    $query->execute([$lastID, $_POST['titel']]);
                 }
 
 			}
