@@ -2,9 +2,6 @@
 
 namespace App\Controllers;
 
-use PDO;
-
-
 class HomeController extends Controller
 {
     public function index()
@@ -17,21 +14,21 @@ class HomeController extends Controller
         // Get posts
         $postsQuery = $db->prepare('SELECT * FROM Posts');
         $postsQuery->execute();
-        $posts = $postsQuery->fetch(PDO::FETCH_ASSOC);
+        $posts = $postsQuery->fetch(\PDO::FETCH_ASSOC);
 
         var_dump($posts);
 
         // Get videos
         $videosQuery = $db->prepare('SELECT * FROM Videos');
         $videosQuery->execute();
-        $videos = $videosQuery->fetch(PDO::FETCH_ASSOC);
+        $videos = $videosQuery->fetch(\PDO::FETCH_ASSOC);
 
         var_dump($videos);
 
         // Get comments
         $commentsQuery = $db->prepare('SELECT * FROM Comments');
         $commentsQuery->execute();
-        $comments = $commentsQuery->fetch(PDO::FETCH_ASSOC);
+        $comments = $commentsQuery->fetch(\PDO::FETCH_ASSOC);
 
         $this->app->view()->set('title', 'Home');
         $this->app->view()->set('posts', $posts);
