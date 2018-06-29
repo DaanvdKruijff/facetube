@@ -14,31 +14,22 @@ class HomeController extends Controller
         // Get posts
         $postsQuery = $db->prepare('SELECT * FROM Posts');
         $postsQuery->execute();
-        $posts = $postsQuery->fetch(\PDO::FETCH_ASSOC);
-
-        var_dump($posts);
-        echo $db->error;
+        // $posts = $postsQuery->fetch(\PDO::FETCH_ASSOC);
 
         // Get videos
         $videosQuery = $db->prepare('SELECT * FROM Videos');
         $videosQuery->execute();
-        $videos = $videosQuery->fetch(\PDO::FETCH_ASSOC);
-
-        var_dump($videos);
-        echo $db->error;
+        // $videos = $videosQuery->fetch(\PDO::FETCH_ASSOC);
 
         // Get comments
         $commentsQuery = $db->prepare('SELECT * FROM Comments');
         $commentsQuery->execute();
-        $comments = $commentsQuery->fetch(\PDO::FETCH_ASSOC);
-
-        var_dump($comments);
-        echo $db->error;
+        // $comments = $commentsQuery->fetch(\PDO::FETCH_ASSOC);
 
         $this->app->view()->set('title', 'Home');
-        $this->app->view()->set('posts', $posts);
-        $this->app->view()->set('videos', $videos);
-        $this->app->view()->set('comments', $comments);
+        $this->app->view()->set('posts', $postsQuery->fetch(\PDO::FETCH_ASSOC));
+        $this->app->view()->set('videos', $videosQuery->fetch(\PDO::FETCH_ASSOC));
+        $this->app->view()->set('comments', $commentsQuery->fetch(\PDO::FETCH_ASSOC));
         $this->app->render('home/index');
     }
 }
