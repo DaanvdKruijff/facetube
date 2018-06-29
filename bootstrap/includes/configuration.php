@@ -18,5 +18,6 @@ $app->set('flight.views.path', '../resources/views');
 $controllers = [
     'HomeController' => new App\Controllers\HomeController($app),
     'AuthController' => new App\Controllers\AuthController($app),
+    'DashboardController' => new App\Controllers\DashboardController($app),
     'PostsController' => new App\Controllers\PostsController($app),
 ];

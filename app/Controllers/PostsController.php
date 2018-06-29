@@ -8,6 +8,7 @@ class PostsController extends Controller
     {
         $db = $this->app->get('db');
 
+<<<<<<< HEAD
         if($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
@@ -25,21 +26,31 @@ class PostsController extends Controller
         		
 			} 
 
+=======
+        // Redirect if not authenticated
+        $this->redirectIfNotAuthenticated();
+>>>>>>> 51333f7301c102c18984695fa316359138ae7b01
 
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        	//
         }
-
 
         $this->app->view()->set('title', 'Post aanmaken');
         $this->app->render('posts/create.php');
     }
+
     public function view()
     {
-       $db = $this->app->get('db');
+        $db = $this->app->get('db');
 
-        if($_SERVER['REQUEST_METHOD'] == "POST") 
-        {
-            
+        // Redirect if not authenticated
+        $this->redirectIfNotAuthenticated();
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //
         }
 
+        // $this->app->view()->set('title', 'Post bekijken');
+        // $this->app->render('posts/view.php');
     }
 }

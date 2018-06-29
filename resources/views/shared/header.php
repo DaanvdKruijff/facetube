@@ -18,3 +18,20 @@
         crossorigin="anonymous">
 </head>
 <body>
+    <div class="navigation">
+        <div class="container">
+            <u>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+
+                <li>
+                    <a href="/auth/signin">Inloggen</a>
+                </li>
+
+                <li>
+                    <a href="/auth/signup">Registreren</a>
+                </li>
+            </u>
+        </div>
+    </div>

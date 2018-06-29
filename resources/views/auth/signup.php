@@ -1,7 +1,7 @@
 <?php $app->render('shared/header'); ?>
 
 <div class="container">
-    <h1>Sign up</h1>
+    <h1>Registreren</h1>
 
     <?php if (isset($error)): ?>
         <p><?php echo htmlspecialchars($error); ?></p>
@@ -33,7 +33,7 @@
             <input type="password" name="password" class="form-control" required="required">
         </div>
 
-        <button type="submit" class="btn btn-primary">Sign up</button>
+        <button type="submit" class="btn btn-primary">Registreren</button>
     </form>
 </div>
 
