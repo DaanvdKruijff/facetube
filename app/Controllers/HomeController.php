@@ -25,6 +25,8 @@ class HomeController extends Controller
         $videosQuery->execute();
         $videos = $videosQuery->fetch(PDO::FETCH_ASSOC);
 
+        var_dump($videos);
+
         // Get comments
         $commentsQuery = $db->prepare('SELECT * FROM Comments');
         $commentsQuery->execute();
