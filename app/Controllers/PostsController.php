@@ -8,12 +8,11 @@ class PostsController extends Controller
     {
         $db = $this->app->get('db');
 
-<<<<<<< HEAD
+        // Redirect if not authenticated
+        $this->redirectIfNotAuthenticated();
+
         if($_SERVER['REQUEST_METHOD'] == "POST") {
-
-
         	if (isset($_POST["titel"], $_POST["inhoud"], $_POST["submit"])) {
-
         		$query = $db->prepare('INSERT INTO Posts (GebruikersID, Titel, Inhoud) VALUES (?, ?, ?)');
                 $query->execute([SESSION['user']], [$_POST['titel'], [$_POST['inhoud']]);
 
@@ -23,16 +22,7 @@ class PostsController extends Controller
                     $query = $db->prepare('INSERT INTO Videos (PostID, Titel) VALUES (?, ?)');
                     $query->execute([$lastID], [$_POST['titel']]);
                 }
-        		
-			} 
-
-=======
-        // Redirect if not authenticated
-        $this->redirectIfNotAuthenticated();
->>>>>>> 51333f7301c102c18984695fa316359138ae7b01
-
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        	//
+			}
         }
 
         $this->app->view()->set('title', 'Post aanmaken');
