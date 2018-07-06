@@ -14,6 +14,7 @@
                         <br />
 
                         <?php echo htmlspecialchars($post['Inhoud']); ?>
+                        <br /><br />
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -31,6 +32,7 @@
                         <br />
 
                         <video src="/assets/video/<?php echo htmlspecialchars($video['VideoID']); ?>.mp4" controls="controls" style="width:100%;"></video>
+                        <br /><br />
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -48,6 +50,7 @@
                         <br />
 
                         <?php echo htmlspecialchars($comment['Inhoud']); ?>
+                        <br /><br />
                     </li>
                 <?php endforeach; ?>
             </ul>
