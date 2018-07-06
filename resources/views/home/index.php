@@ -26,7 +26,7 @@
                         <strong><?php echo htmlspecialchars($video['Titel']); ?></strong>
                         <br />
 
-                        <video src="/assets/video/<?php echo htmlspecialchars($video['VideoID']); ?>.mp4" style="width: 100%"></video>
+                        <video src="/assets/video/<?php echo htmlspecialchars($video['VideoID']); ?>.mp4" controls="controls" style="width: 100%"></video>
                     </li>
                 <?php endforeach; ?>
             </ul>
