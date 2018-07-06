@@ -26,6 +26,10 @@ class PostsController extends Controller
                     $query->execute([$lastID, $_POST['titel']]);
                 }
 
+                $message = "Uw bericht is succesvol geplaatst.";
+
+                echo $message;
+
 			}
         }
 
