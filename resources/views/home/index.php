@@ -1,11 +1,4 @@
-<?php $app->render('shared/header');
-
-print_r($posts);
-print_r($videos);
-print_r($comments);
-exit;
-
-?>
+<?php $app->render('shared/header'); ?>
 
 <div class="container">
     <div class="row">
