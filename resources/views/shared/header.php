@@ -19,21 +19,23 @@
 </head>
 <body>
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-      <a class="navbar-brand" href="/">
-        <img src="/assets/images/Facetube.png" width="110" height="50" alt="FaceTube">
-      </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/auth/signin">Inloggen</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/auth/signup">Registreren</a>
-                </li>
-            </ul>
+        <div class= "container">
+          <a class="navbar-brand" href="/">
+            <img src="/assets/images/Facetube.png" width="110" height="50" alt="FaceTube">
+          </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/auth/signin">Inloggen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/auth/signup">Registreren</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 </body>
