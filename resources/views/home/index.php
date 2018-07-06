@@ -1,4 +1,11 @@
-<?php $app->render('shared/header'); ?>
+<?php $app->render('shared/header');
+
+print_r($posts);
+print_r($videos);
+print_r($comments);
+exit();
+
+?>
 
 <div class="container">
     <div class="row">
@@ -6,7 +13,7 @@
             <h2>Berichten</h2>
 
             <ul style="margin:0; padding:0;">
-                <?php print_r($posts); foreach ($posts as $post): ?>
+                <?php foreach ($posts as $post): ?>
                     <li style="list-style-type:none;">
                         <strong><?php echo htmlspecialchars($post['Titel']); ?></strong>
                         <br />
@@ -21,7 +28,7 @@
             <h2>Video's</h2>
 
             <ul style="margin:0; padding:0;">
-                <?php print_r($videos); foreach ($videos as $video): ?>
+                <?php foreach ($videos as $video): ?>
                     <li style="list-style-type:none;">
                         <strong><?php echo htmlspecialchars($video['Titel']); ?></strong>
                         <br />
@@ -36,7 +43,7 @@
             <h2>Reacties</h2>
 
             <ul style="margin:0; padding:0;">
-                <?php print_r($comments); foreach ($comments as $comment): ?>
+                <?php foreach ($comments as $comment): ?>
                     <li style="list-style-type:none;">
                         <strong>Gebruiker: <?php echo htmlspecialchars($comment['GebruikerID']); ?></strong>
                         <br />
