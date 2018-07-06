@@ -6,7 +6,7 @@
             <h2>Berichten</h2>
 
             <ul>
-                <?php foreach ($posts as $post): ?>
+                <?php print_r($posts); foreach ($posts as $post): ?>
                     <li>
                         <strong><?php echo htmlspecialchars($post['Titel']); ?></strong>
                         <br />
@@ -21,7 +21,7 @@
             <h2>Video's</h2>
 
             <ul>
-                <?php foreach ($videos as $video): ?>
+                <?php print_r($videos); foreach ($videos as $video): ?>
                     <li>
                         <strong><?php echo htmlspecialchars($video['Titel']); ?></strong>
                         <br />
@@ -36,7 +36,7 @@
             <h2>Reacties</h2>
 
             <ul>
-                <?php foreach ($comments as $comment): ?>
+                <?php print_r($comments); foreach ($comments as $comment): ?>
                     <li>
                         <strong>Gebruiker: <?php echo htmlspecialchars($comment['GebruikerID']); ?></strong>
                         <br />
