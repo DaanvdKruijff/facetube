@@ -59,13 +59,32 @@ class PostsController extends Controller
          $this->app->render('posts/view.php');
     }
 
-    public function viewcomments()
-    {
+         public function GetPostContent()
+        {
         $db = $this->app->get('db');
 
         $this->redirectIfNotAuthenticated();
 
         $query = $db->prepare('SELECT * FROM Comments');
+        $sql = $db->prepare($query);
+        $row = $sql->execute();
+
+        return $row
+        }
+
+        public function ShowPostContent()
+        {
+            $sql = GetPostContent();
+
+            while ($row = $sql->fetchAll(PDO::FETCH_ASSOC))  
+            {
+            $id = $row['PostID'];
+            $titel = $row['Titel'];
+            $inhoud = $row['Inhoud'];
+            $GebruikerID = $row['GebruikersID'];
+
+            }
+        }
 
     }
 }
