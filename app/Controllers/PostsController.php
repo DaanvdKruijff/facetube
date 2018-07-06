@@ -54,4 +54,14 @@ class PostsController extends Controller
          $this->app->view()->set('title', 'Post bekijken');
          $this->app->render('posts/view.php');
     }
+
+    public function viewcomments()
+    {
+        $db = $this->app->get('db');
+
+        $this->redirectIfNotAuthenticated();
+
+        $query = $db->prepare('SELECT * FROM Comments');
+
+    }
 }
