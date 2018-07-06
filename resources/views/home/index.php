@@ -8,7 +8,9 @@
             <ul style="margin:0; padding:0;">
                 <?php foreach ($posts as $post): ?>
                     <li style="list-style-type:none;">
-                        <strong><?php echo htmlspecialchars($post['Titel']); ?></strong>
+                        <strong>
+                            <a href="/posts/view?id=<?php echo $comment['PostID']; ?>"><?php echo htmlspecialchars($post['Titel']); ?></a>
+                        </strong>
                         <br />
 
                         <?php echo htmlspecialchars($post['Inhoud']); ?>
@@ -23,7 +25,9 @@
             <ul style="margin:0; padding:0;">
                 <?php foreach ($videos as $video): ?>
                     <li style="list-style-type:none;">
-                        <strong><?php echo htmlspecialchars($video['Titel']); ?></strong>
+                        <strong>
+                            <a href="/posts/view?id=<?php echo $comment['PostID']; ?>"><?php echo htmlspecialchars($video['Titel']); ?></a>
+                        </strong>
                         <br />
 
                         <video src="/assets/video/<?php echo htmlspecialchars($video['VideoID']); ?>.mp4" controls="controls" style="width:100%;"></video>
@@ -38,7 +42,9 @@
             <ul style="margin:0; padding:0;">
                 <?php foreach ($comments as $comment): ?>
                     <li style="list-style-type:none;">
-                        <strong>Gebruiker: <?php echo htmlspecialchars($comment['GebruikerID']); ?></strong>
+                        <strong>
+                            <a href="/user/view?id=<?php echo $comment['GebruikerID']; ?>">Gebruiker: <?php echo htmlspecialchars($comment['GebruikerID']); ?></a>
+                        </strong>
                         <br />
 
                         <?php echo htmlspecialchars($comment['Inhoud']); ?>
