@@ -30,8 +30,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/auth/signin">Inloggen</a>
                 </li>
-                <li>
-                    <a href="/auth/signup">Registreren</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/auth/signup">Registreren</a>
                 </li>
             </ul>
         </div>
