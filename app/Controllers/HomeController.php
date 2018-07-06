@@ -14,17 +14,17 @@ class HomeController extends Controller
         // Get posts
         $postsQuery = $db->prepare('SELECT * FROM Posts');
         $postsQuery->execute();
-        $posts = $postsQuery->fetch(\PDO::FETCH_ASSOC);
+        $posts = $postsQuery->fetchAll(\PDO::FETCH_ASSOC);
 
         // Get videos
         $videosQuery = $db->prepare('SELECT * FROM Videos');
         $videosQuery->execute();
-        $videos = $videosQuery->fetch(\PDO::FETCH_ASSOC);
+        $videos = $videosQuery->fetchAll(\PDO::FETCH_ASSOC);
 
         // Get comments
         $commentsQuery = $db->prepare('SELECT * FROM Comments');
         $commentsQuery->execute();
-        $comments = $commentsQuery->fetch(\PDO::FETCH_ASSOC);
+        $comments = $commentsQuery->fetchAll(\PDO::FETCH_ASSOC);
 
         $this->app->view()->set('title', 'Home');
         $this->app->view()->set('posts', $posts);
