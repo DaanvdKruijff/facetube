@@ -1,7 +1,7 @@
 <?php $app->render('shared/header'); ?>
 
 <div class="container">
-	<h1>Maak uw bericht</h1>
+	<h1>Maak een bericht</h1>
 	<form name="PostMaken" method="post" target="">
 		<label>Titel</label><br>
 			<input type="text" name="titel"><br>
