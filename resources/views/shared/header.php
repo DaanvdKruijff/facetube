@@ -18,7 +18,7 @@
         crossorigin="anonymous">
 </head>
 <body>
-    <nav class="navbar sticky-top navbar-dark bg-dark">
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
       <a class="navbar-brand" href="/">
         <img src="/assets/images/Facetube.png" width="110" height="50" alt="FaceTube">
       </a>
