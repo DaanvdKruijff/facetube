@@ -18,20 +18,19 @@
         crossorigin="anonymous">
 </head>
 <body>
-    <div class="navigation">
-        <div class="container">
-            <u>
-                <li>
-                    <a href="/">Home</a>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">
+        <img src="/assets/images/FaceTube.png" width="110" height="50" class="d-inline-block align-top" alt="">
+      </a>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/auth/signin">Inloggen</a>
                 </li>
-
-                <li>
-                    <a href="/auth/signin">Inloggen</a>
-                </li>
-
                 <li>
                     <a href="/auth/signup">Registreren</a>
                 </li>
-            </u>
+            </ul>
         </div>
-    </div>
+    </nav>
+</body>
