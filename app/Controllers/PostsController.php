@@ -46,44 +46,33 @@ class PostsController extends Controller
         $this->redirectIfNotAuthenticated();
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            
+
             if (isset($_POST['inhoud'])) {
                 $query = $db->prepare('INSERT INTO Comments (GebruikerID, PostID, Inhoud) VALUES (?, ?, ?)');
                 $query->execute([$_SESSION['user'], $_GET['id'], $_POST['inhoud']]);
-                 
+
             }
-            
+
         }
 
-         $this->app->view()->set('title', 'Post bekijken');
-         $this->app->render('posts/view.php');
+         $this->app->view()->set('title', 'Post bekijken'); //EDIT DIT
+         $this->app->render('posts/view.php'); //EDIT DIT
     }
 
-         public function GetPostContent()
-        {
-        $db = $this->app->get('db');
-
-        $this->redirectIfNotAuthenticated();
-
-        $query = $db->prepare('SELECT * FROM Comments');
-        $sql = $db->prepare($query);
-        $row = $sql->execute();
-
-        return $row
-        }
 
         public function ShowPostContent()
         {
-            $sql = GetPostContent();
+            $db = $this->app->get('db');
 
-            while ($row = $sql->fetchAll(PDO::FETCH_ASSOC))  
-            {
-            $id = $row['PostID'];
-            $titel = $row['Titel'];
-            $inhoud = $row['Inhoud'];
-            $GebruikerID = $row['GebruikersID'];
+            $this->redirectIfNotAuthenticated();
 
-            }
+            $postsQuery = $db->prepare('SELECT * FROM Posts');
+            $postsQuery->execute();
+            $posts = $postsQuery->fetchAll(\PDO::FETCH_ASSOC);
+
+            $this->app->view()->set('title', 'Alle posts bekijken');
+            $this->app->view()->set('posts', $posts);
+            $this->app->render('posts/index.php');
         }
 
     }
