@@ -55,8 +55,8 @@ class PostsController extends Controller
 
         }
 
-         $this->app->view()->set('title', 'Post bekijken'); //EDIT DIT
-         $this->app->render('posts/view.php'); //EDIT DIT
+         $this->app->view()->set('title', 'reactie aanmaken'); //EDIT DIT
+         $this->app->render('posts/view'); //EDIT DIT
     }
 
 
@@ -72,7 +72,7 @@ class PostsController extends Controller
 
             $this->app->view()->set('title', 'Alle posts bekijken');
             $this->app->view()->set('posts', $posts);
-            $this->app->render('posts/index.php');
+            $this->app->render('posts/index');
         }
 
     }
