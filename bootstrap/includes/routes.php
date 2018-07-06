@@ -12,3 +12,4 @@ $app->route('/dashboard', [$controllers['DashboardController'], 'index']);
 // Posts
 $app->route('/posts/create', [$controllers['PostsController'], 'create']);
 $app->route('/posts/view', [$controllers['PostsController'], 'view']);
+$app->route('/posts/index', [$controllers['PostsController'], 'ShowPostContent']);

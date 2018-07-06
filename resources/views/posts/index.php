@@ -3,9 +3,11 @@
 <div class="container">
 	<?php 
 	$sql = $posts;
-	foreach ($variable as $key => $value) {
-		# code...
-	}
+	foreach ($posts as $post) {?>
+		<div>
+			<h1>Post title <?php echo $post['titel']; ?></h1>
+		</div>
+	<?php }
 	 ?>
 </div>
 
