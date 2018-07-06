@@ -14,9 +14,9 @@ class PostsController extends Controller
         if($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
-        	if (isset($_POST["titel"], $_POST["inhoud"], $_POST["submit"])) {
+            if (isset($_POST["titel"], $_POST["inhoud"], $_POST["submit"])) {
 
-        		$query = $db->prepare('INSERT INTO Posts (GebruikersID, Titel, Inhoud) VALUES (?, ?, ?)');
+                $query = $db->prepare('INSERT INTO Posts (GebruikersID, Titel, Inhoud) VALUES (?, ?, ?)');
                 $query->execute([$_SESSION['user'], $_POST['titel'], $_POST['inhoud']]);
 
                 if(isset($_POST['video']))
@@ -30,7 +30,7 @@ class PostsController extends Controller
 
                 echo $message;
 
-			}
+            }
         }
 
 
