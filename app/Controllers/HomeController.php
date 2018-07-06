@@ -22,7 +22,7 @@ class HomeController extends Controller
         $videos = $videosQuery->fetchAll(\PDO::FETCH_ASSOC);
 
         // Get comments
-        $commentsQuery = $db->prepare('SELECT g.Gebruikersnaam, c.Inhoud FROM Comments c JOIN Gebruikers g ON c.GebruikerID = g.GebruikerID GROUP BY g.Gerbuikersnaam ');
+        $commentsQuery = $db->prepare('SELECT g.Gebruikersnaam, c.Inhoud FROM Comments c JOIN Gebruikers g ON c.GebruikerID = g.GebruikerID GROUP BY g.Gebruikersnaam ');
         $commentsQuery->execute();
         $comments = $commentsQuery->fetchAll(\PDO::FETCH_ASSOC);
 
